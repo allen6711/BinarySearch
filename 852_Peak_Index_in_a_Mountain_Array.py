@@ -8,6 +8,8 @@ class Solution:
         while start + 1 < end:
             mid = (start + end) // 2
             
+            # Move right bound to mid. Since arr[mid] > arr[mid+1], mid is at/after the peak,
+            # so peak <= mid and end never crosses to the index before the peak.
             if arr[mid] > arr[mid + 1]:
                 end = mid
             
