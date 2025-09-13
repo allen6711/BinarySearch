@@ -32,6 +32,10 @@ class Solution:
                 # nums not in nums
                 else:
                     end -= 1
+            
+            # target == nums[end]
+            else:
+                return True
         
         if nums[start] == target:
             return True
