@@ -12,10 +12,16 @@ class Solution:
             # so peak <= mid and end never crosses to the index before the peak.
             if arr[mid] > arr[mid + 1]:
                 end = mid
-            
+                
+            # Find the first index on the right slope (descending side)
             else:
                 start = mid
-        
+                
+        # I prefer use max(arr[start], arr[end]) to avoid issue in [1, 2] or [2, 1]
+        # if arr[start] > arr[end]:
+        #     return start
+        # else:
+        #     return end 
         return end
 
 if __name__ == '__main__':
